@@ -121,8 +121,8 @@ Why? Because people knew where that gate was. When the trucks stopped coming, th
 ## K12 | Sarah at the store gate, finger up. | Get found before the crisis
 Here's the lesson. You don't get found in the middle of a crisis. You get found before it.
 
-## K13 | Lower-third: the Blueprint cover slides in. | 21-Point Blueprint · Free · Link in the description
-If you're thinking about welcoming visitors, Stephen created a free checklist called the Twenty-One Point Blueprint. Everything to have in place before your first paying guest. The link is in the description. More about it at the end.
+## K13 | Lower-third: the 150 Ways ebook cover slides in. | Free ebook: 150 Ways · Link in the description
+If you're wondering what to offer once people find you, Stephen created a free ebook, One Hundred Fifty Ways to Unlock Hidden Wealth From Your Farm. The link is in the description. More about it at the end.
 
 ## K14 | A soft subscribe button with a bell eases in beside Sarah. | Subscribe
 And if this is helping, subscribe, so the next farm lesson finds you.
@@ -226,23 +226,20 @@ The Kilgus family's store kept going because people knew where to find it. Your 
 ## Z04 | A comment box types itself, with three choices. | Homework: search your farm's name / Nothing? A ghost pin? A full listing?
 So here's your homework. Today, search your farm's name on Google Maps. Then tell me in the comments what you found. Nothing? A ghost pin? Or a full listing?
 
-## Z05 | The Blueprint cover on the left, five phases ticking in on the right. | Free: the 21-Point Blueprint
-And if you're getting ready to welcome visitors, grab Stephen's free Twenty-One Point Blueprint.
+## Z05 | The 150 Ways ebook cover on the left; four labels build on the right. | Free ebook: 150 Ways to Unlock Hidden Wealth From Your Farm
+And once people can find you, give them a reason to come. Grab Stephen's free ebook, One Hundred Fifty Ways to Unlock Hidden Wealth From Your Farm.
 
-## Z06 | A worn notebook page, "the checklist I wish I'd had". | Why free?
-Why is it free? Because it's the checklist Stephen wishes he'd had when he started, and he'd rather you get the basics right before your first paying guest.
+## Z06 | A worn notebook page with a coin purse that stays shut. | Why free? / See your options before you spend a dollar
+Why is it free? Because Stephen wants you to see your options before you spend a dollar.
 
-## Z07 | Five phase cards tick in one by one; card 4 highlights Point 17. | Protect · Offer · Site · Marketing (Point 17: Google) · Soft launch
-Inside are twenty-one points in five phases. Protecting your farm: zoning, insurance, your neighbors, your money. Your offer and your price. Safe parking, clean toilets and clear signs. Your booking system, your website, and your Google profile. That's point seventeen. And a friends and family test run before you open.
+## Z07 | Four cards tick in: difficulty, startup cost, price, earning potential. | 150 ideas / Difficulty · Startup cost · Price · Earning potential
+Inside are one hundred fifty ideas. For each one, you'll see how hard it is, what it costs to start, what to charge, and what it could earn.
 
-## Z08 | Sarah with a clipboard, walking along a fence line. | Print it. Walk your land with it.
-Print it out, grab a pen, and walk your land with it.
+## Z08 | Sarah with a clipboard, walking along a fence line, circling ideas. | Circle the ideas that fit your farm
+Print it out, grab a pen, and circle the ideas that fit your farm.
 
-## Z09 | A big click on a link; a name and email box fills. | Link in the description / Name + email
+## Z09 | A big click on a link; a name and email box fills. | agritourismsuccess.com/150ways / Name + email
 Click the link in the description, enter your name and email, and it's yours.
-
-## Z10 | The 150 Ways ebook cover. | Free ebook: 150 Ways to Unlock Hidden Wealth From Your Farm
-And for ideas on what to offer once people find you, there's Stephen's free ebook too, One Hundred Fifty Ways to Unlock Hidden Wealth From Your Farm. That link is in the description as well.
 
 ## Z11 | End screen: Sarah waves between the open road gate and an open phone gate; blank space for YouTube's elements. | Watch next: 50 Ways to Make Extra Money on Your Farm
 Next, watch Fifty Ways to Make Extra Money on Your Farm, Ranked by Startup Cost. It shows what to offer once people start finding you.

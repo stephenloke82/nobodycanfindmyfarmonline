@@ -567,14 +567,17 @@ def K13(c, t, S):
     season_bg(c, "spring", t, seed=28)
     country_store(c, 1450, 1000, 0.9, t)
     SAR(c, S, t, 420, 1010, 1.0, pose="present")
-    a = ease_out(prog(t, 0.2, 0.7))
+    a = ease_out(prog(t, P(S, 1), 0.7))
     if a > 0:
         c.push_group()
         box(c, 720, 640, 1100, 280, 30, PAPER, 6)
-        blueprint_cover(c, 850, 780, 0.3, t)
-        text(c, "21-Point Blueprint", 980, 740, 64, DISPLAY, INK)
-        text(c, "Free · Link in the description", 980, 830, 48, BODY, LEAF)
+        ebook_cover(c, 850, 780, 0.3, t)
+        text(c, "150 Ways to Unlock", 980, 730, 54, DISPLAY, INK)
+        text(c, "Hidden Wealth From Your Farm", 980, 790, 44, BODY, INK)
+        text(c, "Free ebook · Link in the description", 980, 860, 40, BODY, LEAF)
         c.pop_group_to_source(); c.paint_with_alpha(a)
+
+
 
 
 @scene2("K14")
@@ -1031,18 +1034,18 @@ def Z04(c, t, S):
              anchor="l")
 
 
-PHASES = ["Protect your farm", "Your offer and price", "Site and safety", "Marketing (Point 17: Google)",
-          "Friends-and-family test"]
-
-
 @scene2("Z05")
 def Z05(c, t, S):
     farm(c, t, seed=43)
-    a = ease_back(prog(t, 0.2, 0.8))
+    a = ease_back(prog(t, P(S, 2), 0.8))
     if a > 0:
-        c.save(); c.translate(560, 560); c.scale(a, a); blueprint_cover(c, 0, 0, 0.95, t); c.restore()
-    for i, s in enumerate(PHASES):
-        pill(c, s, 1000, 260 + i * 140, t, P(S, 0) + 0.8 + i * 0.35, size=46, mark="v", anchor="l")
+        c.save(); c.translate(560, 560); c.scale(a, a); ebook_cover(c, 0, 0, 0.95, t); c.restore()
+    card(c, ["Once they can find you,", ("give them a reason to come.", 60, DISPLAY, LEAF)], 960, 160, t,
+         [P(S, 0), P(S, 1)], size=56)
+    card(c, [("Free ebook", 66, DISPLAY, TOMATO), "150 Ways to Unlock", "Hidden Wealth From Your Farm"], 960, 520, t,
+         [P(S, 2), P(S, 3), P(S, 3) + 0.3], size=54)
+
+
 
 
 @scene2("Z06")
@@ -1055,32 +1058,42 @@ def Z06(c, t, S):
         setc(c, hx("b9d3f0")); c.set_line_width(3); c.stroke()
     c.restore()
     title(c, "Why free?", W / 2, 260, t, P(S, 0), 96, col=GOLD)
-    ease_text(c, "The checklist Stephen", W / 2, 470, 64, t, P(S, 1), BODY, INK, "center")
-    ease_text(c, "wishes he'd had", W / 2, 550, 64, t, P(S, 1) + 0.3, BODY, INK, "center")
-    ease_text(c, "Get the basics right first.", W / 2, 720, 64, t, P(S, 2), DISPLAY, LEAF, "center")
+    ease_text(c, "See your options", W / 2, 520, 72, t, P(S, 1), DISPLAY, INK, "center")
+    ease_text(c, "before you spend a dollar.", W / 2, 620, 72, t, P(S, 1) + 0.4, DISPLAY, LEAF, "center")
+    # coin purse that stays shut
+    a = ease_out(prog(t, P(S, 1) + 0.8, 0.6))
+    if a > 0:
+        c.push_group()
+        fill_ink(c, lambda: smooth(c, [(840, 860), (1080, 860), (1110, 760), (960, 720), (810, 760)]), TOMATO)
+        circle(c, 930, 730, 16, GOLD, 4); circle(c, 990, 730, 16, GOLD, 4)
+        c.pop_group_to_source(); c.paint_with_alpha(a)
+
+
 
 
 @scene2("Z07")
 def Z07(c, t, S):
     soft_bg(c, t, hx("e6f1fb"))
-    title(c, "21 points · 5 phases", W / 2, 150, t, P(S, 0), 90)
-    starts = [P(S, 1), P(S, 5), P(S, 6), P(S, 8), P(S, 12)]
-    for i, (s, st) in enumerate(zip(PHASES, starts)):
+    title(c, "150 ideas, each with:", W / 2, 170, t, P(S, 0), 90)
+    labs = [("Difficulty", "how hard it is", SKY), ("Startup cost", "what it costs to start", TOMATO),
+            ("Price", "what to charge", GOLD), ("Earning potential", "what it could earn", LEAF)]
+    starts = [P(S, 2), P(S, 3), P(S, 4), P(S, 5)]
+    for i, ((a_, b_, col), st) in enumerate(zip(labs, starts)):
         a = ease_out(prog(t, st, 0.6))
         if a <= 0:
             continue
-        x, y = 120 + (i % 3) * 580, 260 + (i // 3) * 360
-        hl = i == 3 and t > P(S, 11)
+        x, y = 160 + (i % 2) * 820, 280 + (i // 2) * 340
         c.push_group()
-        box(c, x, y, 540, 300, 30, hx("fff1c4") if hl else PAPER, 7)
-        circle(c, x + 70, y + 80, 42, LEAF, 5)
-        text(c, str(i + 1), x + 70, y + 102, 56, DISPLAY, PAPER, "center")
-        lines = wrap(c, s, BODY, 50, 420)
-        for k, ln in enumerate(lines):
-            text(c, ln, x + 40, y + 190 + k * 60, 50, BODY, INK)
-        if hl:
-            stroke(c, lambda: rrect(c, x - 10, y - 10, 560, 320, 36), GOLD, 10)
+        box(c, x, y, 780, 290, 30, PAPER, 7)
+        circle(c, x + 90, y + 145, 56, col, 5)
+        stroke(c, lambda: (c.move_to(x + 64, y + 145), c.line_to(x + 84, y + 168), c.line_to(x + 118, y + 120)),
+               PAPER, 9)
+        sz = fit_size(c, a_, DISPLAY, 66, 560, 40)
+        text(c, a_, x + 180, y + 135, sz, DISPLAY, INK)
+        text(c, b_, x + 180, y + 205, 46, BODY, GREY_D)
         c.pop_group_to_source(); c.paint_with_alpha(a)
+
+
 
 
 @scene2("Z08")
@@ -1090,7 +1103,9 @@ def Z08(c, t, S):
     SAR(c, S, t, x, 1010, 0.95, pose="slate", walk=t * 5.5,
         hold=(1, lambda c, hx_, hy: (box(c, hx_ - 70, hy - 150, 140, 180, 10, WOOD, 4),
                                      box(c, hx_ - 55, hy - 130, 110, 150, 6, PAPER, 0, shading=0))))
-    title(c, "Print it. Walk your land with it.", W / 2, 180, t, P(S, 0), 84)
+    title(c, "Circle the ideas that fit your farm.", W / 2, 180, t, P(S, 2), 80)
+
+
 
 
 @scene2("Z09")
@@ -1098,7 +1113,7 @@ def Z09(c, t, S):
     soft_bg(c, t, hx("e6f1fb"))
 
     def body(c, x, y, w, h, t):
-        text(c, "Get the free 21-Point Blueprint", x + 60, y + 110, 60, DISPLAY, INK)
+        text(c, "Get the free ebook: 150 Ways", x + 60, y + 110, 60, DISPLAY, INK)
         for i, (lab, val) in enumerate((("Name", "Your name"), ("Email", "you@yourfarm.com"))):
             st = P(S, 1) + i * 0.8
             yy = y + 190 + i * 150
@@ -1111,18 +1126,11 @@ def Z09(c, t, S):
             c.save(); c.translate(x + w / 2, y + 570); c.scale(a, a)
             box(c, -220, -60, 440, 120, 60, LEAF, 6); text(c, "It's yours", 0, 22, 60, DISPLAY, PAPER, "center")
             c.restore()
-    browser(c, 260, 120, 1400, 820, "Link in the description", t, body)
+    browser(c, 260, 120, 1400, 820, "agritourismsuccess.com/150ways", t, body)
 
 
-@scene2("Z10")
-def Z10(c, t, S):
-    farm(c, t, seed=45)
-    a = ease_back(prog(t, 0.2, 0.8))
-    if a > 0:
-        c.save(); c.translate(560, 560); c.scale(a, a); ebook_cover(c, 0, 0, 0.95, t); c.restore()
-    card(c, [("Free ebook", 64, DISPLAY, LEAF), "150 Ways to Unlock", "Hidden Wealth From Your Farm",
-             ("Link in the description", 46, BODY, SKY)], 940, 220, t,
-         [P(S, 0), P(S, 1), P(S, 1) + 0.3, P(S, 2)], size=54)
+
+
 
 
 def end_screen(c, t, S, wave=True):
