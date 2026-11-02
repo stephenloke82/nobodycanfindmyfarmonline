@@ -20,10 +20,10 @@ from beats import load_beats, ROOT
 MODEL = os.environ.get("KOKORO_MODEL", os.path.join(ROOT, "models", "kokoro-v1.0.onnx"))
 VOICES = os.environ.get("KOKORO_VOICES", os.path.join(ROOT, "models", "voices-v1.0.bin"))
 # Young American Female Smooth: filled in from voice/VOICE.md
-BLEND = [("af_heart", 1.0)]
+BLEND = [("af_heart", 0.55), ("af_bella", 0.20), ("af_sky", 0.20), ("af_sarah", 0.05)]
 OUT = os.path.join(ROOT, "build", "audio")
 SR = 24000
-SPEED = 1.05
+SPEED = 1.11
 BEAT_SIL = 0.8
 
 # Hand phonemes (misaki US phoneme set) for words not in misaki's dictionaries.
