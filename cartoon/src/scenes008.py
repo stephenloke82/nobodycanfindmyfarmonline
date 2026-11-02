@@ -184,8 +184,8 @@ def H11(c, t, S):
     SAR(c, S, t, 420, 1010, 1.0, pose=pose, wave_amp=0.25 if pose == "wave" else 0)
     card(c, [("I'm Sarah.", 90, DISPLAY, INK), "Agritourism Success", ("by Stephen Loke", 50, BODY, INK)], 900, 90, t,
          [P(S, 0), P(S, 3), P(S, 3) + 0.3], size=60)
-    card(c, ["Stephen's farm is featured in", ("Bloomberg News and Asahi Shimbun", 56, DISPLAY, TOMATO)], 900, 560, t,
-         [P(S, 4), P(S, 4) + 0.4], size=48)
+    card(c, ["Stephen Loke grows durians in Malaysia", ("and welcomes visitors to his farm", 56, DISPLAY, LEAF)], 900, 560,
+         t, [P(S, 4), P(S, 4) + 0.4], size=48)
 
 
 # ================================================================ Section 2: The ghost pin

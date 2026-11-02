@@ -1,6 +1,6 @@
 # Nobody Can Find My Farm Online: The Free Fix Most Farmers Skip
 
-Format of each beat: `## ID | what we see | words on screen`, then the spoken line. `(beat)` is a held silence of about 0.8 seconds, never spoken. Spoken lines are written out in full so the voice reads numbers correctly. They follow the approved script (Claude Doc "Script: Nobody Can Find My Farm Online (video-008)"); the only changes are for a cartoon narrator: Sarah speaks for Stephen in the third person, numbers are spelled for the voice.
+Format of each beat: `## ID | what we see | words on screen`, then the spoken line. `(beat)` is a held silence of about 0.8 seconds, never spoken. Spoken lines are written out in full so the voice reads numbers correctly. They follow the approved script (Claude Doc "Script: Nobody Can Find My Farm Online (video-008)"); the only changes are for an AI narrator, following Stephen's voiceover rules: Sarah speaks for Stephen in the third person, never says his farm is "featured in" the press, says he "created" his guides, and numbers are spelled out for the voice.
 
 Host: Sarah. Running image: the two gates (the gate on the road, the gate on the phone).
 
@@ -39,8 +39,8 @@ In this video, we will see why good farms go invisible online, visit a family da
 ## H10 | Tile 3 glows gold; Sarah points at it. | Stay for No. 3
 Stay for number three. It's the step most farmers skip, and it's where the visitors are.
 
-## H11 | Sarah waves, then taps her own chest, amused. A name card builds beside her. | Sarah / Agritourism Success / Stephen Loke: farm featured in Bloomberg News and Asahi Shimbun
-I'm Sarah. Yes, I'm a cartoon. This channel comes from Stephen Loke, whose farm is featured in Bloomberg News and Asahi Shimbun.
+## H11 | Sarah waves, then taps her own chest, amused. A name card builds beside her. | Sarah / Agritourism Success / Stephen Loke, durian farmer in Malaysia
+I'm Sarah. Yes, I'm a cartoon. This channel comes from Stephen Loke, a durian farmer in Malaysia who welcomes visitors to his farm.
 
 # Section 2: The ghost pin
 
@@ -122,7 +122,7 @@ Why? Because people knew where that gate was. When the trucks stopped coming, th
 Here's the lesson. You don't get found in the middle of a crisis. You get found before it.
 
 ## K13 | Lower-third: the Blueprint cover slides in. | 21-Point Blueprint · Free · Link in the description
-If you're thinking about welcoming visitors, Stephen wrote a free checklist called the Twenty-One Point Blueprint. Everything to have in place before your first paying guest. The link is in the description. More about it at the end.
+If you're thinking about welcoming visitors, Stephen created a free checklist called the Twenty-One Point Blueprint. Everything to have in place before your first paying guest. The link is in the description. More about it at the end.
 
 ## K14 | A soft subscribe button with a bell eases in beside Sarah. | Subscribe
 And if this is helping, subscribe, so the next farm lesson finds you.
