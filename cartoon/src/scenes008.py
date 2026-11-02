@@ -1145,5 +1145,3 @@ def Z12(c, t, S):
     title(c, "Two gates. Open both.", W / 2, 230, t, P(S, 0), 110, col=GOLD)
     text(c, "agritourismsuccess.com/150ways", W / 2, 360, 46, BODY, PAPER, "center", outline=INK, olw=8,
          alpha=ease_out(prog(t, P(S, 0) + 1.0, 0.8)))
-    text(c, "Narration and animation are AI-generated.", W - 40, H - 30, 28, BODYM, PAPER, "right", outline=INK,
-         olw=5)
