@@ -2,7 +2,7 @@
 
 A fully AI-generated cartoon explainer for the Agritourism Success channel, built from the approved video-008 script.
 Every frame is drawn in code (Python + pycairo). The only sound is the narration in Stephen's saved voice,
-**Young American Female Smooth** (Kokoro-82M ONNX; recipe in `voice/VOICE.md`). No music, no sound effects.
+**Young American Female Smooth** (Kokoro-82M ONNX; Stephen's saved recipe in `voice/VOICE.md`). No music, no sound effects.
 The host is **Sarah**, a young farm host drawn in the same storybook style as the channel's earlier cartoons.
 
 | Path | What it is |
@@ -13,7 +13,7 @@ The host is **Sarah**, a young farm host drawn in the same storybook style as th
 | `output/video-008.srt` | Captions from the real narration timings |
 | `output/thumbnail-a.png`, `output/thumbnail-b.png` | 1280x720 thumbnails |
 | `output/contact-sheet.jpg` | One still from every scene |
-| `output/voice-comparison.wav` | Stephen's sample, then the rebuilt voice saying the same lines |
+| `output/voice-comparison.wav` | Stephen's sample, then the saved recipe saying the same lines |
 | `output/checks-report.md` | Measured checks |
 | `src/` | All source code |
 
@@ -44,7 +44,7 @@ python3 src/checks.py                   # output/checks-report.md
 ## How it is put together
 
 - `beats.py` parses the script; `voice.py` renders the narration per beat following `voice/VOICE.md`
-  (misaki G2P, hand phonemes for names such as Kilgus, Fairbury and Shimbun).
+  (misaki G2P, two sentences per take, hand phonemes for names such as Kilgus and Fairbury).
 - `timeline.py` times every scene from the real narration and builds the mouth envelope Sarah lip-syncs to.
 - `sarah.py` draws Sarah; `kit008.py` holds this video's props (phones, maps, ghost pin, listings, the phone gate,
   Jersey cows, the country store); `scenes008.py` has one function per beat.

@@ -1,42 +1,34 @@
-# Young American Female Smooth: voice recipe (rebuilt 2 Nov 2026)
+# Young American Female Smooth: voice recipe
 
-Stephen's saved AI voice, used for Sarah's narration in video 008. `Young-American-Female-Smooth.mp3` in this folder
-is Stephen's reference sample. Its original settings were not saved anywhere this session could reach (Google Drive,
-Descript, GitHub), so the recipe below was **rebuilt from the sample**. It is the closest match found, not a
-confirmed copy of the original. If the original settings turn up, put them here and re-run `src/voice.py`.
+Stephen's saved AI voice (from his stephen-voiceover skill). `Young-American-Female-Smooth.mp3` in this folder is his
+reference sample. Used for Sarah's narration in video 008.
 
-## Rebuilt settings
+## Settings
 
-- Engine: Kokoro-82M (royalty-free), ONNX version, the same model files as Midwest Female Warm
-- Voice blend: `af_heart` 0.55 + `af_bella` 0.20 + `af_sky` 0.20 + `af_sarah` 0.05 (weighted sum of the style arrays)
-- Speed: 1.11
-- Language: American English (misaki G2P, full engine with spaCy)
-- Phrase rendering, pauses (seed 7), trimming, lead-in/tail and mastering: identical to Midwest Female Warm
-  (`agritourismvideos1/voice/VOICE.md`): bass +2 dB at 180 Hz, treble −2 dB at 7 kHz, gentle compression,
-  loudnorm −16 LUFS, 192 kbps mono MP3 for samples
+- Engine: Kokoro-82M (royalty-free), ONNX version (`models/kokoro-v1.0.onnx`, `models/voices-v1.0.bin`, not committed)
+- Voice blend: `af_heart` 0.4 + `af_bella` 0.3 + `af_sky` 0.3 (weighted sum of the style arrays)
+- Speed: 1.04
+- Language: American English
+- Takes: two sentences per take, even 0.14 s gaps between takes. Style row `voice[min(len(tokens), 510) - 1]`,
+  input `[[0, *tokens, 0]]`. Trim each take at 2% of the 240-sample envelope peak with 40 ms padding.
+- Lead-in 0.25 s, tail 0.30 s, peak-normalise to 0.9. A held `(beat)` in a script is 0.8 s of silence.
+- Mastering (ffmpeg), pitch +5% with the length kept, softened highs:
 
-## How it was rebuilt (measured, not heard)
+```
+-af asetrate=24000*1.05,aresample=24000,atempo=1/1.05,highshelf=f=7000:g=-3,lowpass=f=11000,acompressor=threshold=-20dB:ratio=2:attack=10:release=150:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=11
+-ar 44100 -ac 1 (192 kbps MP3 for samples)
+```
 
-1. The sample and Midwest Female Warm's sample share the same encoder, a 12 kHz band limit (Kokoro's 24 kHz output)
-   and the same −16 LUFS mastering, and they say the same sentences (checked by aligning the two recordings).
-   Text, transcribed with PocketSphinx: "Welcome to the farm. Today you will walk under tall durian trees, taste fresh
-   fruit, and see how a simple orchard can grow a second income. So grab a seat, relax, and enjoy your visit."
-2. Candidate recipes were rendered on that text and compared with the sample by time-aligned MFCC distance.
-   The method was first run blind on Midwest Female Warm and found its saved recipe (`af_heart` 0.6 + `af_sarah` 0.4)
-   as the best match.
-3. Search: every single American female voice, two-voice blends with `af_heart`, then a step-by-step weight and speed
-   search over ten voices. British voices, extra EQ and unnormalised weights were tried and were worse.
+## Check
 
-| Rebuild compared with its own sample (same pipeline) | Distance (lower is closer) |
-| --- | --- |
-| Midwest Female Warm, saved recipe | 11.9 |
-| Young American Female Smooth, rebuilt recipe above | 34.7 |
-| Best single voice (`af_heart`) | about 38 |
+Rendering the sample's own lines with this recipe and comparing against the sample (time-aligned MFCC distance):
+13.8, in line with Midwest Female Warm against its own sample (11.9). The comparison clip is
+`output/voice-comparison.wav`: the sample first, then the recipe.
 
-The gap means the rebuild is close in pace and pitch (11.7 s against the sample's 11.6 s) but not identical in tone.
-Listen to `output/voice-comparison.wav`: Stephen's sample first, then the rebuild saying the same lines.
+## Rules for an AI narrator (from Stephen's voiceover rules)
 
-## Pronunciation
-
-Words missing from misaki's dictionaries get hand phonemes in `src/voice.py` (`HAND`): Arlene, Asahi, Bloomberg,
-Duane, Fairbury, Kilgus, Shimbun, TikTok, ebook. Nothing is dropped; an unknown word stops the build.
+- Speak as a third party working for Stephen, never as Stephen.
+- Never say his farm is "featured in" Bloomberg News or Asahi Shimbun.
+- Say Stephen "created" his ebooks and guides, never "wrote".
+- Never state the video's length; say "In this video, we will...".
+- Spell every number and year out as words.
